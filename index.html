@@ -27,7 +27,7 @@ border-radius: 30px;
 padding: 9px;
 margin: 9px;
 font-family: 'Manuale', serif;
-}
+          }
    select{
      padding: 9px;
      border-radius: 18px;
@@ -99,32 +99,40 @@ let word=0;
      //for same gender
      if(choice1=='boy' && choice2=='boy' ||choice1=='girl' && choice2=='girl' ){
           if(word>=0&&word<=5){
-               result.innerHTML=(`${input1} and ${input2} can be friends`);
+               result.innerHTML=(`${input1} and ${input2} are ghosts`);
                result.style.color=hex();
           }
           if(word>5 && word<=15){
-               result.innerHTML=(`${input1} and ${input2} are the best friends`);
+               result.innerHTML=(`${input1} and ${input2} are the enemies`);
                result.style.color=hex();
           }
-          if(word>15&&word<=100){
+          if(word>15&&word<=30){
                result.innerHTML=(`${input1} and ${input2} are the best among all.`)
+               result.style.color=hex();
+          }
+           if(word>30&&word<=90){
+               result.innerHTML=(`${input1} and ${input2} are the avengers.`)
                result.style.color=hex();
           }
      }
      //for different gender
      if(choice1=='boy' && choice2=='girl' ||choice1=='girl' && choice2=='boy' ){
           if(word>=0&&word<=5){
-               result.innerHTML=(`${input1} and ${input2} can be a pair`);
+               result.innerHTML=(`${input1} and ${input2} are made for each other`);
                result.style.color=hex();
           }
           if(word>5 && word<=15){
                result.innerHTML=(`${input1} and ${input2} are the best pair like Romeo and Juliet`);
                result.style.color=hex();
           }
-          if(word>15&&word<=100){
-               result.innerHTML=(`${input1} and ${input2} are the best couple don't seperate what ever happens to you`)
+          if(word>15&&word<=30){
+               result.innerHTML=(`${input1} and ${input2} are Cute and Lovely couple`)
                result.style.color=hex();
 }
+               if(word>30&&word<=90){
+               result.innerHTML=(`${input1} and ${input2} has True Love.`)
+               result.style.color=hex();
+          }
 }
 }
 </script>
