@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Make My Percent</title>
+     <style>
+ 
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@200&family=League+Gothic&family=Manuale&display=swap');
+.main{
+padding: 90px;
+background-color: bisque;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+align-items: center;
+flex-direction: column;
+gap:30px;
+margin: auto;
+margin-top: 10%;
+text-align: center;
+border-radius: 30px;
+}
+input{
+border-radius: 30px;
+padding: 9px;
+margin: 9px;
+font-family: 'Manuale', serif;
+}
+   select{
+     padding: 9px;
+     border-radius: 18px;
+     font-family: 'Inter Tight', sans-serif;  
+ }     
+ #result{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ } 
+ button{
+     padding: 9px;
+     border-radius: 18px;
+     border: solid white;
+     font-size: 18px;
+     background: rgb(255, 177, 255);
+     letter-spacing: 2px;
+     font-family: 'Inter Tight', sans-serif;  
+     font-weight: bold;
+ }
+     </style>
+</head>
+<body>
+    <div class="main">
+     <div class="inputs">
+          <input type="text" id="inp1" placeholder="Enter your name">
+          <select id="selection1">
+               <option value="boy">BOY</option>
+               <option value="girl">GIRL</option>
+              </select>
+          <input type="text" id="inp2" placeholder="Enter someone's name">
+         <select id="selection2">
+          <option value="boy">BOY</option>
+          <option value="girl">GIRL</option>
+         </select>
+     </div>
+     <div id="result"></div>
+     <button id="btn" onclick>Relation</button> 
+</div> 
+ <script>
+function hex(){
+     let hexa="#";
+     let hexarr=['a','f','h','b','s','t','e',1,2,3,4,5,6,7,8,9,0];
+     for(let i=0;i<6;i++){
+          hexa=hexa+hexarr[Math.floor(Math.random()*hexarr.length)];
+}
+return hexa;
+}
+
+btn.onclick=function(){
+input1=document.getElementById("inp1").value;
+input2= document.getElementById("inp2").value;
+result =  document.getElementById("result");
+btn= document.getElementById("btn");
+input1=input1.toLowerCase();
+input2=input2.toLowerCase();
+let arr1=input1.split('');
+let arr2=input2.split('');
+choice1=document.getElementById('selection1').value;
+choice2=document.getElementById('selection2').value;
+let i;
+let j;
+let word=0;
+     for(i=0;i<arr1.length;i++){
+          for(j=0;j<arr2.length;j++){
+               if(arr1[i]==arr2[j]){
+                  word++;
+          }
+          }
+     }
+     //for same gender
+     if(choice1=='boy' && choice2=='boy' ||choice1=='girl' && choice2=='girl' ){
+          if(word>=0&&word<=5){
+               result.innerHTML=(`${input1} and ${input2} can be friends`);
+               result.style.color=hex();
+          }
+          if(word>5 && word<=15){
+               result.innerHTML=(`${input1} and ${input2} are the best friends`);
+               result.style.color=hex();
+          }
+          if(word>15&&word<=100){
+               result.innerHTML=(`${input1} and ${input2} are the best among all.`)
+               result.style.color=hex();
+          }
+     }
+     //for different gender
+     if(choice1=='boy' && choice2=='girl' ||choice1=='girl' && choice2=='boy' ){
+          if(word>=0&&word<=5){
+               result.innerHTML=(`${input1} and ${input2} can be a pair`);
+               result.style.color=hex();
+          }
+          if(word>5 && word<=15){
+               result.innerHTML=(`${input1} and ${input2} are the best pair like Romeo and Juliet`);
+               result.style.color=hex();
+          }
+          if(word>15&&word<=100){
+               result.innerHTML=(`${input1} and ${input2} are the best couple don't seperate what ever happens to you`)
+               result.style.color=hex();
+}
+}
+}
+</script>
+</body>
+</html>
